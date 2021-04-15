@@ -1,0 +1,36 @@
+reload:
+  messages:
+    - "&bReloaded!"
+    - "&5Deez nuts"
+emojis:
+  pog:
+    - ꌵ
+  rocket:
+    - ꌵ
+
+titles:
+  hungry:
+    Display-Title: ""
+    Title: "&r&3&lTest"
+    Icon: ""
+    Description:
+      - "&r&5Line 1"
+      - "&r&4Line 2"
+      - "Line 3"
+      - "etc"
+    CustomModelData: 123
+
+
+
+
+
+
+
+
+# Title Icons:
+#            "솁뜖솣솊솗솑솠솢솔솓솉솦솏솋뜗솖솆솕",
+#            "뜘손솤뜛뜙뜚속솄솇송솅소솃솧솘솙뜝솨",
+#            "솥뜜솞솎솈솟睽瞪睁瞿睢矍瞧睑盷盹鹞睛",
+#            "眠瞩眍眶瞒瞄朏鼎眦瞳ꑝ妥奚鹦胭胛爵腘",
+#            "腮丹腿膪膀鄫ꑝ彤ꑝ肮肪脐胩腋胪写臆脑",
+#            "臃胲膻金甑渗ꑝꑝꑝꑝꑝꑝꑝꑝꑝꑝꑝꑝ",

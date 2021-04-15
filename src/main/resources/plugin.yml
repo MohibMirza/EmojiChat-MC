@@ -1,0 +1,16 @@
+name: EmojiDetector
+version: ${project.version}
+main: me.kingfrozoemojis.detect.Detect
+api-version: 1.16
+authors: [ KingFrozo ]
+description: Detect Emojis and replace them with picture emojis
+commands:
+  emojichat:
+    description: Reload the plugin
+    aliases: [echat]
+  emojis:
+    description: List of all the emojis available to users
+    aliases: [emoji]
+  titlecreate:
+    description: generate new titles
+    aliases: [tcreate]
