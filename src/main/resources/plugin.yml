@@ -2,6 +2,7 @@ name: EmojiDetector
 version: ${project.version}
 main: me.kingfrozoemojis.detect.Detect
 api-version: 1.16
+depend: [LuckPerms]
 authors: [ KingFrozo ]
 description: Detect Emojis and replace them with picture emojis
 commands:

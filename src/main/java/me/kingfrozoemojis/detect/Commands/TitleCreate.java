@@ -45,7 +45,7 @@ public class TitleCreate implements CommandExecutor {
             return false;
         }
 
-        sender.sendMessage(ChatColor.GREEN + "Title successfully generated!");
+        sender.sendMessage(ChatColor.DARK_RED + "Title successfully generated!");
 
         return false;
     }
@@ -74,12 +74,11 @@ public class TitleCreate implements CommandExecutor {
 
         meta.setLore(lore);
 
-        meta.setCustomModelData(1);
-        meta.addItemFlags(ItemFlag.values());
+        meta.setCustomModelData(config.getInt(path + ".CustomModelData"));
+        meta.addItemFlags(ItemFlag.values()); // SAVES A LINE IN LORE
         title.setItemMeta(meta);
 
         return title;
     }
-
 
 }
