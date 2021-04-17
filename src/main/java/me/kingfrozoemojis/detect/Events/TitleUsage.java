@@ -61,39 +61,40 @@ public class TitleUsage implements Listener {
         String prefix = user.getCachedData().getMetaData().getPrefix();
 
         if(prefix == null) prefix = "";
+        player.sendMessage(item.getItemMeta().getDisplayName());
+        player.sendMessage(prefix);
+        if(prefix.equals(item.getItemMeta().getDisplayName()) ) {
+            player.sendMessage("You already have this title enabled!");
+            return;
+        }
 
-        // player.sendMessage(prefix);
-
-        FileConfiguration config = Detect.getPlugin().getConfig();
-
-        int cmd_new = item.getItemMeta().getCustomModelData();
+        prefix = prefix.replaceAll("§", "&");
 
         player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.AIR));
 
         cooldowns.put(player.getName(), (System.currentTimeMillis() + 1000) );
         player.sendMessage("Cooldown applied");
 
+        returnTitle(player, prefix);
+
+        String title_new = item.getItemMeta().getDisplayName();
+        user.data().clear(NodeType.PREFIX.predicate(mn -> mn.getPriority() == 2));
+        PrefixNode newPrefix = PrefixNode.builder(title_new,2).build();
+        user.data().add(newPrefix);
+        lp_api.getUserManager().saveUser(user);
+    }
+
+
+
+    public void returnTitle(Player player, String prefix) {
+        FileConfiguration config = Detect.getPlugin().getConfig();
         for(String key : config.getConfigurationSection("titles").getKeys(false)) {
 
             String title = config.getString("titles." + key + ".Title");
-            int cmd_key = config.getInt("titles." + key + ".CustomModelData");
 
-            if(prefix.equalsIgnoreCase(title)) {
-                // player.sendMessage("Returning your title back to you!");
+            if(prefix.compareToIgnoreCase(title) == 0) {
                 ItemStack title_item = TitleCreate.createTitle(key, "red");
                 player.getInventory().addItem(title_item);
-            }
-
-            if(cmd_new == cmd_key) {
-                String title_new = config.getString("titles." + key + ".Title");
-                PrefixNode node = PrefixNode.builder(title_new,2).build();
-
-                player.sendMessage(title_new);
-
-                DataMutateResult result = user.data().add(node);
-                result = user.data().remove(PrefixNode.builder(prefix, 2).build());
-                lp_api.getUserManager().saveUser(user);
-                // player.sendMessage("Prefix updated!");
             }
         }
     }

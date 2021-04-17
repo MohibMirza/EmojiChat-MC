@@ -11,7 +11,7 @@ emojis:
 titles:
   hungry:
     Display-Title: ""
-    Title: "&r&3&lHungry"
+    Title: "&3&lHungry"
     Icon: ""
     Description:
       - "&r&5Line 1"
@@ -20,7 +20,7 @@ titles:
       - "etc"
     CustomModelData: 12
   witch:
-    Title: "&r&3&lWitch"
+    Title: "&3&lWitch"
     Icon: ""
     Description:
       - "&r&5Line 1"
