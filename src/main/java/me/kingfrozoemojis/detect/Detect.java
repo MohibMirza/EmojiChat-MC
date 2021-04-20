@@ -1,5 +1,6 @@
 package me.kingfrozoemojis.detect;
 
+import me.kingfrozoemojis.detect.Assets.GUI.MobilePhoneGUI;
 import me.kingfrozoemojis.detect.Commands.Emojis;
 import me.kingfrozoemojis.detect.Commands.HouseKeeping;
 import me.kingfrozoemojis.detect.Commands.TitleCreate;
@@ -27,6 +28,8 @@ public final class Detect extends JavaPlugin {
 
         TitleUsage.cooldowns = new HashMap<String, Long>();
 
+        MobilePhoneGUI.createInventory();
+
         saveDefaultConfig();
 
        getCommand("emojichat").setExecutor(new HouseKeeping());
@@ -36,6 +39,8 @@ public final class Detect extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new EmojiTalk(), this);
         getServer().getPluginManager().registerEvents(new TitleUsage(), this);
+        getServer().getPluginManager().registerEvents(new MobilePhoneGUI(), this);
+
         RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
         if (provider != null) {
            lp_api  = provider.getProvider();

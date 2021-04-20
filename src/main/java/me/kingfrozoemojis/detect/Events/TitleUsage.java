@@ -46,6 +46,7 @@ public class TitleUsage implements Listener {
         if(item.getType() != Material.LEATHER_HORSE_ARMOR) return;
         if(!item.hasItemMeta()) return;
         if(!item.getItemMeta().hasCustomModelData()) return;
+
         if(cooldowns.containsKey(player.getName())){
             long time = System.currentTimeMillis(), cooldown = cooldowns.get(player.getName());
             if(time < cooldown) {
@@ -61,10 +62,7 @@ public class TitleUsage implements Listener {
         String prefix = user.getCachedData().getMetaData().getPrefix();
 
         if(prefix == null) prefix = "";
-        player.sendMessage(item.getItemMeta().getDisplayName());
-        player.sendMessage(prefix);
         if(prefix.equals(item.getItemMeta().getDisplayName()) ) {
-            player.sendMessage("You already have this title enabled!");
             return;
         }
 
@@ -73,7 +71,6 @@ public class TitleUsage implements Listener {
         player.getInventory().setItem(player.getInventory().getHeldItemSlot(), new ItemStack(Material.AIR));
 
         cooldowns.put(player.getName(), (System.currentTimeMillis() + 1000) );
-        player.sendMessage("Cooldown applied");
 
         returnTitle(player, prefix);
 
