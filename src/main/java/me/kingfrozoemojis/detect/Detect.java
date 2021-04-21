@@ -1,5 +1,6 @@
 package me.kingfrozoemojis.detect;
 
+import me.kingfrozoemojis.detect.Assets.GUI.CrateGUI;
 import me.kingfrozoemojis.detect.Assets.GUI.MobilePhoneGUI;
 import me.kingfrozoemojis.detect.Commands.Emojis;
 import me.kingfrozoemojis.detect.Commands.HouseKeeping;
@@ -30,6 +31,8 @@ public final class Detect extends JavaPlugin {
 
         MobilePhoneGUI.createInventory();
 
+        //CrateGUI.instantiateCrates();
+
         saveDefaultConfig();
 
        getCommand("emojichat").setExecutor(new HouseKeeping());
@@ -40,6 +43,7 @@ public final class Detect extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EmojiTalk(), this);
         getServer().getPluginManager().registerEvents(new TitleUsage(), this);
         getServer().getPluginManager().registerEvents(new MobilePhoneGUI(), this);
+        // getServer().getPluginManager().registerEvents(new CrateGUI(), this);
 
         RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
         if (provider != null) {

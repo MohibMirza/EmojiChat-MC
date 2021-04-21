@@ -16,8 +16,9 @@ public class MobilePhoneGUI implements Listener {
     public static Inventory phone;
 
     @EventHandler
-    public void invClick(InventoryClickEvent event){
-        if(event.getView().getTitle() != "ꈉ鄛暝鄟婪ꌅꌅ鄝肤鄞涞脿膛ꈇ郓") return;
+    public void invClick(InventoryClickEvent event) {
+        // event.getWhoClicked().sendMessage( event.getView().getTitle().compareTo("§fꈉ鄛暝鄟婪ꌅꌅ鄝肤鄞涞脿膛ꈇ郓") + "");
+        if(!event.getView().getTitle().equals("§fꈉ鄛暝鄟婪ꌅꌅ鄝肤鄞涞脿膛ꈇ郓")) return;
         int slot = event.getSlot();
         int row = (int) (slot / 9.0);
         int col = slot % 9;
@@ -29,6 +30,9 @@ public class MobilePhoneGUI implements Listener {
             player.closeInventory();
             return;
         }
+        event.setCancelled(true);
+
+        // player.sendMessage(slot + "");
 
         if(col < 4){
             if(row == 3) {
@@ -36,8 +40,18 @@ public class MobilePhoneGUI implements Listener {
             }else {
                 player.sendMessage("Friends");
             }
-        }else {
-
+        }else if(col < 7){
+            if(row < 2) {
+                player.sendMessage("Settings");
+            }else{
+                player.sendMessage("Profile");
+            }
+        } else {
+            if(row < 2) {
+                player.sendMessage("Settings");
+            }else{
+                player.sendMessage("Party");
+            }
         }
     }
 

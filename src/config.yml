@@ -27,11 +27,23 @@ titles:
       - "&r&4Line 2"
       - "Line 3"
     CustomModelData: 13
+  player:
+    Display-Title: ""
+    Title: "&3뜉ꈉꈉꈉꈉꈈ&f뜏"
+    Icon: ""
+    Description:
+      - "&r&5Default Title"
+      - "&r&4Yeet"
+      - "Line 3"
+      - "etc"
+    CustomModelData: 15
 
-
-
-
-
+crate-titles:
+  - &fꈉ贫懋洞
+  - &fꈉ忿懋洞
+  - &fꈉ鉊懋洞
+  - &fꈉ盆懋洞
+  - &fꈉ岔懋洞
 
 
 
