@@ -60,7 +60,7 @@ public class CrateGUI implements Listener {
     }
 
     @EventHandler
-    public void invCloseAttempt(InventoryCloseEvent) {
+    public void invCloseAttempt(InventoryCloseEvent event) {
         // DONT LET THEM CLOSE WHILE SPINNING
         // LET THEM CLOSE ON COLLECT PAGE THO
     }
