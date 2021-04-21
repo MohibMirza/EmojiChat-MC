@@ -29,7 +29,6 @@ public class Emojis implements CommandExecutor {
                         + " " + ChatColor.LIGHT_PURPLE + "/emojis")));
 
                 message.append(" ");
-
             });
 
             sender.spigot().sendMessage(message.create());

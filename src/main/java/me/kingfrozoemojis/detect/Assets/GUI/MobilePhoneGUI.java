@@ -18,6 +18,7 @@ public class MobilePhoneGUI implements Listener {
     @EventHandler
     public void invClick(InventoryClickEvent event) {
         // event.getWhoClicked().sendMessage( event.getView().getTitle().compareTo("§fꈉ鄛暝鄟婪ꌅꌅ鄝肤鄞涞脿膛ꈇ郓") + "");
+        if(event.getClickedInventory().getType().getDefaultTitle().equals("Player")) return;
         if(!event.getView().getTitle().equals("§fꈉ鄛暝鄟婪ꌅꌅ鄝肤鄞涞脿膛ꈇ郓")) return;
         int slot = event.getSlot();
         int row = (int) (slot / 9.0);

@@ -38,13 +38,19 @@ titles:
       - "etc"
     CustomModelData: 15
 
-crate-titles:
-  - &fꈉ贫懋洞
-  - &fꈉ忿懋洞
-  - &fꈉ鉊懋洞
-  - &fꈉ盆懋洞
-  - &fꈉ岔懋洞
-
+crate:
+  cratetitles:
+    - '&fꈉ贫'
+    - '&fꈉ忿'
+    - '&fꈉ鉊'
+    - '&fꈉ盆'
+    - '&fꈉ岔'
+  cratecollect:
+    - '&fꈉ贫懋洞'
+    - '&fꈉ忿懋洞'
+    - '&fꈉ鉊懋洞'
+    - '&fꈉ盆懋洞'
+    - '&fꈉ岔懋洞'
 
 
 
